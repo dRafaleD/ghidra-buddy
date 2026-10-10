@@ -10,6 +10,16 @@ Ghidra can be intimidating: many windows, many shortcuts, unfamiliar symbols. Gh
 
 It runs entirely locally. No cloud or AI services are used; explanations come from deterministic rules inside the extension.
 
+## Screenshots
+
+The desktop frontend (`desktop/`) shows the same guidance next to the decompiler and disassembly views. The screenshots below use the built-in demo data for `samples/beginner_sample`.
+
+![Overview: decompiler, disassembly and context inspector with the guided workflow](docs/images/overview.png)
+
+![Defined strings with cross-reference counts](docs/images/strings.png)
+
+![Searchable reverse-engineering glossary](docs/images/glossary.png)
+
 ## Features
 
 - **Context Inspector**: updates as you move through the Listing or Decompiler. Covers functions (signature, parameters, calling convention, xrefs), external API calls, conditional jumps, stack variables and defined strings.
