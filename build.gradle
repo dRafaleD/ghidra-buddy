@@ -1,0 +1,35 @@
+// Ghidra Extension Build Configuration for GhidraCompanion
+
+def ghidraInstallDir
+
+if (System.env.GHIDRA_INSTALL_DIR) {
+	ghidraInstallDir = System.env.GHIDRA_INSTALL_DIR
+}
+else if (project.hasProperty("GHIDRA_INSTALL_DIR")) {
+	ghidraInstallDir = project.getProperty("GHIDRA_INSTALL_DIR")
+}
+else {
+	throw new GradleException("Set the GHIDRA_INSTALL_DIR environment variable (or -PGHIDRA_INSTALL_DIR=...) to your Ghidra installation directory.")
+}
+
+apply from: new File(ghidraInstallDir).getCanonicalPath() + "/support/buildExtension.gradle"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+buildExtension {
+	exclude 'gradle/**'
+	exclude 'gradlew*'
+	exclude 'gradle.properties'
+	exclude '.git*'
+}

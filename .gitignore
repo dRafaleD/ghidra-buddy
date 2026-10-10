@@ -1,0 +1,15 @@
+.gradle/
+build/
+dist/
+bin/
+.project
+.classpath
+.settings/
+.idea/
+*.iml
+*.class
+.claude/
+node_modules/
+desktop/src-tauri/target/
+*.exe
+.DS_Store
